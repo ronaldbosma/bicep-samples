@@ -4,7 +4,7 @@
 The naming convention is a variation on the naming convention of the Azure Cloud Adoption Framework (CAF), as described on [Azure Resource Naming Best Practices](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming). 
 The workload and environment are combined into a single identifier to better support the `azd` workflow. See the following image:
 
-![Naming Convention](./naming-conventions-azd.png)
+![Naming Convention](./naming-convention-azd.png)
 
 This naming convention is implemented using a variation of the Bicep user-defined functions, as described in the blog post [Apply Azure naming convention using Bicep functions](https://ronaldbosma.github.io/blog/2024/06/05/apply-azure-naming-convention-using-bicep-functions/).
 

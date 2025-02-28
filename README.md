@@ -3,4 +3,4 @@
 This repository contains a set of Bicep samples.
 
 - Naming Conventions
-    - [Naming Convention for Azure Developer CLI (azd) templates](./naming-conventions/naming-conventions-azd/naming-conventions-azd.md)
+    - [Naming Convention for Azure Developer CLI (azd) templates](./naming-conventions/naming-convention-azd/naming-convention-azd.md)
