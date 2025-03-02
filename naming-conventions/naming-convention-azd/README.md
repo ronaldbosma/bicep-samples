@@ -25,7 +25,7 @@ var resourceGroupName = getResourceName('resourceGroup', environmentName, locati
 
 The `getInstanceId` function will return the `instance` value if provided, else it will generate a 5-character string based on the subscription id, environment name and location.
 
-The result will look like this: `rg-aisquick-sdc-5spzh`
+The result will look like this: `rg-myenv-nwe-g6r5i`
 
 ## Tests
 
