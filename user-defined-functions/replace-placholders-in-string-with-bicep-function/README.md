@@ -1,8 +1,8 @@
 # Replace placeholders in string
 
-See the blog post [Replace placeholders in string with user-defined Bicep function](https://ronaldbosma.github.io/blog/2024/06/21/replace-placeholders-in-string-with-user-defined-bicep-function/) for more information.
+This folder contains an example on how to replace placeholders in a string using user-defined functions in Bicep. See the blog post [Replace placeholders in string with user-defined Bicep function](https://ronaldbosma.github.io/blog/2024/06/21/replace-placeholders-in-string-with-user-defined-bicep-function/) for more information. 
 
-This folder contains an example on how to replace placeholders in a string using user-defined functions in Bicep. It also uses the Bicep Test Framework to test the functions. You can run the tests using the following command:
+The Bicep Test Framework is used to test the functions. You can run the tests using the following command:
 
 ```bash
 bicep test .\tests.bicep
