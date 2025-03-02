@@ -29,7 +29,7 @@ The result will look like this: `rg-aisquick-sdc-5spzh`
 
 ## Tests
 
-The [test](./tests) folder contains a set of tests that validate the naming convention. The tests are implemented using theBicep Test Framework.
+The [tests](./tests) folder contains a set of tests that validate the naming convention. The tests are implemented using the Bicep Test Framework.
 
 To execute the tests, navigate to the tests folder and execute the following command:
 
