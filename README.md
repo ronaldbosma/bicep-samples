@@ -7,4 +7,5 @@ This repository contains a set of Bicep samples.
     - [Naming Convention for Azure Developer CLI (azd) templates](./naming-conventions/naming-convention-azd/README.md)
 
 - User-defined functions
+    - [Flatten Tags](./user-defined-functions/flatten-tags/README.md)
     - [Replace placeholders in string](./user-defined-functions/replace-placholders-in-string-with-bicep-function/README.md)
