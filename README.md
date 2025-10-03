@@ -3,9 +3,9 @@
 This repository contains a set of Bicep samples.
 
 - Naming conventions
-    - [Naming Convention of Cloud Adoption Framework (CAF)](./naming-conventions/naming-convention-caf/README.md)
-    - [Naming Convention for Azure Developer CLI (azd) templates](./naming-conventions/naming-convention-azd/README.md)
+    - [Naming Convention of Cloud Adoption Framework (CAF)](./naming-conventions/naming-convention-caf)
+    - [Naming Convention for Azure Developer CLI (azd) templates](./naming-conventions/naming-convention-azd)
 
 - User-defined functions
-    - [Flatten Tags](./user-defined-functions/flatten-tags/README.md)
-    - [Replace placeholders in string](./user-defined-functions/replace-placholders-in-string-with-bicep-function/README.md)
+    - [Flatten Tags](./user-defined-functions/flatten-tags)
+    - [Replace placeholders in string](./user-defined-functions/replace-placholders-in-string-with-bicep-function)
