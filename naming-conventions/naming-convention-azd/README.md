@@ -17,13 +17,13 @@ import { getResourceName, getInstanceId } from './naming-conventions.bicep'
 
 var environmentName = 'myenv'
 var location = 'norwayeast'
-var instance = ''
 
-var instanceId = getInstanceId(environmentName, location, instance)
+var instanceId = generateInstanceId(environmentName, location)
 var resourceGroupName = getResourceName('resourceGroup', environmentName, location, instanceId)
 ```
 
-The `getInstanceId` function will return the `instance` value if provided, else it will generate a 5-character string based on the subscription id, environment name and location.
+The `generateInstanceId` will generate a 5-character string based on the subscription id, environment name and location.
+If you want the option to provide a custom instance id, you can use the `getInstanceId` function instead. It will return the `instance` value if provided, else it will use the `generateInstanceId` function to create one.
 
 The result will look like this: `rg-myenv-nwe-g6r5i`
 

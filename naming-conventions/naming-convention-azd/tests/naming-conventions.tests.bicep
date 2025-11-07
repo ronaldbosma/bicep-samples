@@ -285,3 +285,34 @@ test testGetInstanceIdReturnsInstanceIfSpecified 'naming-conventions.getInstance
     expectedResult: 'myinstance'
   }
 }
+
+
+//=============================================================================
+// Generate Instance Id
+// NOTE: subscription().subscriptionId = 00000000-0000-0000-0000-000000000000
+//=============================================================================
+
+
+test testGenerateInstanceIdReturnsGeneratedId 'naming-conventions.generateInstanceId.bicep' = {
+  params: {
+    environment: 'myenv'
+    region: 'norwayeast'
+    expectedResult: 'g6r5i'
+  }
+}
+
+test testGenerateInstanceIdWithDifferentEnvironment 'naming-conventions.generateInstanceId.bicep' = {
+  params: {
+    environment: 'testenvironment'
+    region: 'norwayeast'
+    expectedResult: 'fn7w7'
+  }
+}
+
+test testGenerateInstanceIdWithDifferentRegion 'naming-conventions.generateInstanceId.bicep' = {
+  params: {
+    environment: 'myenv'
+    region: 'swedencentral'
+    expectedResult: 'gxci3'
+  }
+}
