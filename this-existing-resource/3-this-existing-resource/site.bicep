@@ -74,8 +74,8 @@ resource site 'Microsoft.Web/sites@2024-04-01' = {
   ]
 }
 
-// resource siteAppSettings 'Microsoft.Web/sites/config@2024-04-01' = {
-//   parent: site
-//   name: 'appsettings'
-//   properties: union(appSettings, this.existingResource().?properties)
-// }
+resource siteAppSettings 'Microsoft.Web/sites/config@2024-04-01' = {
+  parent: site
+  name: 'appsettings'
+  properties: union(appSettings, this.existingResource().?properties)
+}
