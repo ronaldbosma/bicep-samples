@@ -19,3 +19,23 @@ If you would run the deployment again, it will keep merging the app settings wit
 A possible downside of this approach is that app app settings are not removed if they are no longer present in the new app settings.
 
 > The sample uses a Function App, but the same applies to all sites.
+
+## Prerequisites
+
+The `thisNamespace` feature is not yet available in the stable Bicep CLI.
+You need to install the nightly Bicep CLI to use this feature. 
+You can use this command (see [installing nightly](https://github.com/Azure/bicep/blob/main/docs/installing-nightly.md) for more info):
+
+```cmd
+iex "& { $(irm https://aka.ms/bicep/nightly-cli.ps1) }"
+```
+
+You'll also need to enable the experimental feature by creating a `bicepconfig.json` file with the following content:
+
+```json
+{
+  "experimentalFeaturesEnabled": {
+    "thisNamespace": true
+  }
+}
+```
