@@ -6,7 +6,7 @@
 // Parameters
 //=============================================================================
 
-param siteName string = 'func-${uniqueString(resourceGroup().id)}'
+param siteName string = 'func-scenario2-${uniqueString(resourceGroup().id)}'
 
 //=============================================================================
 // Variables

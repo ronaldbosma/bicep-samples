@@ -7,9 +7,9 @@
 //=============================================================================
 
 param location string = resourceGroup().location
-param storageAccountName string = 'st${uniqueString(resourceGroup().id)}'
-param appServicePlanName string = 'asp-${uniqueString(resourceGroup().id)}'
-param siteName string = 'func-${uniqueString(resourceGroup().id)}'
+param storageAccountName string = 'st2${uniqueString(resourceGroup().id)}'
+param appServicePlanName string = 'asp-scenario2-${uniqueString(resourceGroup().id)}'
+param siteName string = 'func-scenario2-${uniqueString(resourceGroup().id)}'
 
 //=============================================================================
 // Variables
