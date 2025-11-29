@@ -13,7 +13,7 @@ It will:
 - ask for confirmation to proceed _(before you do, check the app settings in the Azure portal)_
 - then it will deploy [additional-app-settings.bicep](./1-no-merge/additional-app-settings.bicep) to add more app settings
 
-**THIS DOESN'T WORK (YET)**:The second deployment will merge the app settings set by the first deployment, resulting in both the existing and new app settings being present.
+**THIS DOESN'T WORK (YET?)**: The second deployment will merge the app settings set by the first deployment, resulting in both the existing and new app settings being present.
 If you would run the deployment again, it will keep merging the app settings without overwriting existing ones.
 
 A possible downside of this approach is that app app settings are not removed if they are no longer present in the new app settings.

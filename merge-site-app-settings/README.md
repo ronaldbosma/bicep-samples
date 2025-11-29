@@ -11,6 +11,6 @@ I ussually create a separate [merge-app-settings.bicep](./2-merge-with-module/me
 This module should be used in both the platform and application deployments to ensure that app settings are merged correctly.
 This is shown in scenario [2-merge-with-module](./2-merge-with-module/).
 
-With the introduction of the `this` namespace in Bicep, we can now simplify this process by using `this.existingResource()` to get the existing app settings directly within the same Bicep file.
+**THIS DOESN'T WORK (YET?)**: With the introduction of the `this` namespace in Bicep, we can now simplify this process by using `this.existingResource()` to get the existing app settings directly within the same Bicep file.
 This eliminates the need for a separate module to merge app settings, as shown in scenario [3-this-existing-resource](./3-this-existing-resource/).
 The blog post [How to use the `this` namepsace in Bicep to check resources](https://www.idontlikeai.dev/how-to-use-the-this-namepsace-in-bicep-to-check-resources/) by Gijs Reijn gives a great overview of the new `this` namespace in Bicep.
