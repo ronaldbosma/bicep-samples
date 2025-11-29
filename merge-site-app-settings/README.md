@@ -1,9 +1,8 @@
 # Using `this.existingResource()` to merge site app settings
 
 I've had several projects with a separation in platform and application teams. 
-The platform team is responsible for deploying the infrastructure, including the App Service, while the application team deploys the application code.
-In such scenarios, the platform team often configures some default app settings for the App Service. 
-However, the application team may need to add application specific app settings.
+The platform team is responsible for deploying the infrastructure, including App Services, while the application team deploys the application code. 
+In such scenarios, the platform team often configures default app settings required for the App Service, and the application team adds application specific app settings.
 
 If you don't take this into account, deploying the application code with its app settings would overwrite the existing app settings set by the platform team and vice versa. 
 This is show in scenario [1-no-merge](./1-no-merge/).
