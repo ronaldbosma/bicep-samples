@@ -70,11 +70,18 @@ func getPrefixMap() object => {
   actionGroup: 'ag'
   alert: 'al'
   apiManagement: 'apim'
+  appConfigurationStore: 'appcs'
   applicationGateway: 'agw'
   applicationInsights: 'appi'
   appServiceEnvironment: 'ase'
   appServicePlan: 'asp'
+  containerApps: 'ca'
+  containerAppsEnvironment: 'cae'
   containerInstance: 'ci'
+  containerRegistry: 'cr'
+  dashboard: 'dash'
+  eventHub: 'evh'
+  eventHubsNamespace: 'evhns'
   functionApp: 'func'
   keyVault: 'kv'
   loadBalancerInternal: 'lbi'
@@ -87,6 +94,7 @@ func getPrefixMap() object => {
   networkInterface: 'nic'
   networkSecurityGroup: 'nsg'
   publicIpAddress: 'pip'
+  redisCache: 'redis'
   resourceGroup: 'rg'
   serviceBusNamespace: 'sbns'
   serviceBusQueue: 'sbq'
@@ -102,6 +110,10 @@ func getPrefixMap() object => {
   webApp: 'app' 
   
   // Custom prefixes not specified on the Microsoft site
+  appRegistration: 'appreg'
+  azdEnvironment: 'azd'
+  client: 'client'
+  webApplicationFirewallPolicy: 'waf' 
   webtest: 'webtest'
 }
 
