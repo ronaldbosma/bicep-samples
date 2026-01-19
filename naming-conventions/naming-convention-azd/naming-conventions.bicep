@@ -81,6 +81,7 @@ func getPrefix(resourceType string) string => getPrefixMap()[resourceType]
 func getPrefixMap() object => {
   actionGroup: 'ag'
   alert: 'al'
+  alertProcessingRule: 'apr'
   apiManagement: 'apim'
   appConfigurationStore: 'appcs'
   applicationGateway: 'agw'
