@@ -12,7 +12,7 @@ param siteName string = 'func-scenario1-${uniqueString(resourceGroup().id)}'
 // Existing Resources
 //=============================================================================
 
-resource site 'Microsoft.Web/sites@2024-04-01' existing = {
+resource site 'Microsoft.Web/sites@2025-03-01' existing = {
   name: siteName
 }
 
@@ -20,7 +20,7 @@ resource site 'Microsoft.Web/sites@2024-04-01' existing = {
 // Resources
 //=============================================================================
 
-resource siteAppSettings 'Microsoft.Web/sites/config@2024-04-01' = {
+resource siteAppSettings 'Microsoft.Web/sites/config@2025-03-01' = {
   parent: site
   name: 'appsettings'
   properties: {

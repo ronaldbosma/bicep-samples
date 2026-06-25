@@ -43,7 +43,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2024-01-01' = {
   }
 }
 
-resource hostingPlan 'Microsoft.Web/serverfarms@2024-04-01' = {
+resource hostingPlan 'Microsoft.Web/serverfarms@2025-03-01' = {
   name: appServicePlanName
   location: location
   kind: 'functionapp'
@@ -54,7 +54,7 @@ resource hostingPlan 'Microsoft.Web/serverfarms@2024-04-01' = {
   properties: {}
 }
 
-resource site 'Microsoft.Web/sites@2024-04-01' = {
+resource site 'Microsoft.Web/sites@2025-03-01' = {
   name: siteName
   location: location
   kind: 'functionapp'

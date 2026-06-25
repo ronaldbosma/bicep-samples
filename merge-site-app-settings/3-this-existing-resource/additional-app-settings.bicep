@@ -20,7 +20,7 @@ param siteName string = 'func-scenario3-${uniqueString(resourceGroup().id)}'
 // Existing Resources
 //=============================================================================
 
-resource site 'Microsoft.Web/sites@2024-04-01' existing = {
+resource site 'Microsoft.Web/sites@2025-03-01' existing = {
   name: siteName
 }
 
@@ -29,13 +29,13 @@ resource site 'Microsoft.Web/sites@2024-04-01' existing = {
 //=============================================================================
 
 // NOTE: This doesn't merge app settings (yet)
-// resource siteAppSettings 'Microsoft.Web/sites/config@2024-04-01' = {
+// resource siteAppSettings 'Microsoft.Web/sites/config@2025-03-01' = {
 //   parent: site
 //   name: 'appsettings'
 //   properties: union(additionalAppSettings, this.existingResource().?properties)
 // }
 
-resource siteAppSettings 'Microsoft.Web/sites/config@2024-04-01' = {
+resource siteAppSettings 'Microsoft.Web/sites/config@2025-03-01' = {
   parent: site
   name: 'appsettings'
   properties: {

@@ -23,7 +23,7 @@ A possible downside of this approach is that app app settings are not removed if
 Note that we're using a separate module to merge the app settings, because the following doesn't work:
 
 ```bicep
-resource siteAppSettings 'Microsoft.Web/sites/config@2024-04-01' = {
+resource siteAppSettings 'Microsoft.Web/sites/config@2025-03-01' = {
   parent: site
   name: 'appsettings'
   properties: union(list('${site.id}/config/appsettings', site.apiVersion).properties, appSettings)
