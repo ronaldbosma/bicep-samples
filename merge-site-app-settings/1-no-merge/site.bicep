@@ -15,7 +15,7 @@ param siteName string = 'func-scenario1-${uniqueString(resourceGroup().id)}'
 // Resources
 //=============================================================================
 
-resource storageAccount 'Microsoft.Storage/storageAccounts@2024-01-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2026-04-01' = {
   name: storageAccountName
   location: location
   kind: 'StorageV2'
