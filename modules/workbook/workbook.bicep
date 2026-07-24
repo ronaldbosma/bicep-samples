@@ -54,7 +54,7 @@ resource workbook 'Microsoft.Insights/workbooks@2023-06-01' = {
     displayName: environment != '' ? '${displayName} - ${toUpper(environment)}' : displayName
     category: category
     serializedData: serializedData
-    sourceId: appInsights.?id ?? logAnalyticsWorkspace.?id ?? null
+    sourceId: appInsights.?id ?? logAnalyticsWorkspace.?id ?? 'azure monitor'
     version: version
   }
 }
