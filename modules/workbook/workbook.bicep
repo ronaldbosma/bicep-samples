@@ -15,6 +15,8 @@ param displayName string
 @description('The environment for this workbook instance. This is used to create a unique display name for the workbook. For example: "dev", "test" or "prod".')
 param environment string
 
+//TODO: Fail if both appInsightsName and logAnalyticsWorkspaceName are specified.
+
 @description('The name of the App Insights instance that will be used to set as the source resource.')
 param appInsightsName string?
 
@@ -38,6 +40,7 @@ param version string = 'Notebook/1.0'
 //=============================================================================
 
 var workbookDisplayName = environment == '' ? displayName : '${displayName} (${environment})'
+// TODO: Can we fail if the workbookContent still has placeholders after the replacePlaceholders function is called?
 var workbookContent = placeholders == null ? serializedData : replacePlaceholders(serializedData, items(placeholders!))
 var workbookSourceId = appInsights.?id ?? logAnalyticsWorkspace.?id ?? 'azure monitor'
 
