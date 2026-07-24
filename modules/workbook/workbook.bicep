@@ -27,8 +27,8 @@ param serializedData string
 @description('Workbook category, as defined by the user at creation time. Default: workbook.')
 param category string = 'workbook'
 
-@description('Workbook schema version format, like \'Notebook/1.0\', which should match the workbook in serializedData. Default: 1.0')
-param version string = '1.0'
+@description('Workbook schema version format, like \'Notebook/1.0\', which should match the workbook in serializedData. Default: Notebook/1.0')
+param version string = 'Notebook/1.0'
 
 //=============================================================================
 // Existing resources
