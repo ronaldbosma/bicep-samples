@@ -1,18 +1,34 @@
+param(
+	[string]$Path = '.'
+)
+
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $repoRoot = Split-Path -Parent $PSCommandPath
 Set-Location -Path $repoRoot
 
+$searchRoot = Resolve-Path -Path $Path -ErrorAction SilentlyContinue
+if (-not $searchRoot) {
+	Write-Host "The path '$Path' does not exist relative to $repoRoot." -ForegroundColor Red
+	exit 1
+}
+
+$searchRootPath = $searchRoot.Path
+if (-not (Test-Path -Path $searchRootPath -PathType Container)) {
+	Write-Host "The path '$Path' is not a directory." -ForegroundColor Red
+	exit 1
+}
+
 if (-not (Get-Command az -ErrorAction SilentlyContinue)) {
 	Write-Host "Azure CLI ('az') is not installed or not available on PATH." -ForegroundColor Red
 	exit 1
 }
 
-$bicepFiles = Get-ChildItem -Path '.' -Filter '*.bicep' -Recurse -File | Sort-Object FullName
+$bicepFiles = Get-ChildItem -Path $searchRootPath -Filter '*.bicep' -Recurse -File | Sort-Object FullName
 
 if ($bicepFiles.Count -eq 0) {
-	Write-Host "No .bicep files found under $repoRoot" -ForegroundColor Yellow
+	Write-Host "No .bicep files found under $searchRootPath" -ForegroundColor Yellow
 	exit 0
 }
 
