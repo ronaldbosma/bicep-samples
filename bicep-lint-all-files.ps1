@@ -25,7 +25,7 @@ if (-not (Get-Command az -ErrorAction SilentlyContinue)) {
 	exit 1
 }
 
-$bicepFiles = Get-ChildItem -Path $searchRootPath -Filter '*.bicep' -Recurse -File | Sort-Object FullName
+$bicepFiles = @(Get-ChildItem -Path $searchRootPath -Filter '*.bicep' -Recurse -File | Sort-Object FullName)
 
 if ($bicepFiles.Count -eq 0) {
 	Write-Host "No .bicep files found under $searchRootPath" -ForegroundColor Yellow

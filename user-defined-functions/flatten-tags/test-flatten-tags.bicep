@@ -1,7 +1,7 @@
 import { flattenTags } from './flatten-tags.bicep'
 
 // Arrange
-param tags object
+param tags { * : string }
 
 param expectedResult string[]
 

@@ -1,2 +1,2 @@
 @export()
-func flattenTags(tags object) string[] => map(items(tags), tag => '${tag.key}: ${tag.value}')
+func flattenTags(tags { * : string }) string[] => map(items(tags), tag => '${tag.key}: ${tag.value}')
