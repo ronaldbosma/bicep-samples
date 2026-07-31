@@ -2,6 +2,7 @@
 func replacePlaceholders(originalString string, placeholders { *: string }) string =>
   replacePlaceholderInternal(originalString, items(placeholders))
 
+#disable-next-line use-user-defined-types // The used reduce function expects an array, so using array as the type here is correct.
 func replacePlaceholderInternal(originalString string, placeholders array) string =>
   reduce(
     placeholders, 

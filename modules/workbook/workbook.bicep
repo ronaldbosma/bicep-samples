@@ -48,6 +48,7 @@ var workbookSourceId = appInsights.?id ?? logAnalyticsWorkspace.?id ?? 'azure mo
 // Functions
 //=============================================================================
 
+#disable-next-line use-user-defined-types // The used reduce function expects an array, so using array as the type here is correct.
 func replacePlaceholders(originalString string, placeholders array) string =>
   reduce(
     placeholders, 
