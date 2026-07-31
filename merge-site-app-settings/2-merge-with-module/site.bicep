@@ -17,7 +17,7 @@ param siteName string = 'func-scenario2-${uniqueString(resourceGroup().id)}'
 
 var storageAccountConnectionString string = 'DefaultEndpointsProtocol=https;AccountName=${storageAccountName};EndpointSuffix=${environment().suffixes.storage};AccountKey=${storageAccount.listKeys().keys[0].value}'
 
-var appSettings object = {
+var appSettings resourceInput<'Microsoft.Web/sites/config@2025-03-01'>.properties = {
     AzureWebJobsStorage: storageAccountConnectionString
     FUNCTIONS_EXTENSION_VERSION: '~4'
     FUNCTIONS_WORKER_RUNTIME: 'dotnet-isolated'
