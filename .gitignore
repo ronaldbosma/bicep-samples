@@ -346,3 +346,9 @@ MigrationBackup/
 
 # draw.io temp files
 *.drawio.bkp
+
+# Azurite
+__blobstorage__/
+__queuestorage__/
+__azurite_db*.json
+AzuriteConfig

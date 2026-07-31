@@ -5,7 +5,14 @@
 // API Management functions
 
 @export()
+func getApiManagementHostname(apimServiceName string) string => '${apimServiceName}.azure-api.net'
+
+@export()
 func getApiManagementGatewayUrl(apimServiceName string) string => 'https://${apimServiceName}.azure-api.net'
+
+// For the Consumptier tier, the status endpoint is /internal-status-0123456789abcdef. For other tiers it's /status-0123456789abcdef.
+@export()
+func getApiManagementStatusEndpoint(sku string) string => sku == 'Consumption' ? 'internal-status-0123456789abcdef' : 'status-0123456789abcdef'
 
 
 // Event Hub functions

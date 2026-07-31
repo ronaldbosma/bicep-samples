@@ -22,7 +22,7 @@ func getResourceNameByConvention(resourceType string, workload string, environme
 func shouldBeShortened(resourceType string) bool => contains(getResourcesTypesToShorten(), resourceType)
 
 // This is a list of resources that should be shortened.
-func getResourcesTypesToShorten() array => [
+func getResourcesTypesToShorten() string[] => [
   'keyVault'        // Has max length of 24
   'storageAccount'  // Has max length of 24 and only allows letters and numbers
   'virtualMachine'  // Has max length of 15 for Windows
@@ -66,15 +66,23 @@ func getPrefix(resourceType string) string => getPrefixMap()[resourceType]
 
 // Prefixes for commonly used resources.
 // Source for abbreviations: https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
-func getPrefixMap() object => {
+func getPrefixMap() { *: string } => {
   actionGroup: 'ag'
   alert: 'al'
+  alertProcessingRule: 'apr'
   apiManagement: 'apim'
+  appConfigurationStore: 'appcs'
   applicationGateway: 'agw'
   applicationInsights: 'appi'
   appServiceEnvironment: 'ase'
   appServicePlan: 'asp'
+  containerApps: 'ca'
+  containerAppsEnvironment: 'cae'
   containerInstance: 'ci'
+  containerRegistry: 'cr'
+  dashboard: 'dash'
+  eventHub: 'evh'
+  eventHubsNamespace: 'evhns'
   functionApp: 'func'
   keyVault: 'kv'
   loadBalancerInternal: 'lbi'
@@ -87,6 +95,7 @@ func getPrefixMap() object => {
   networkInterface: 'nic'
   networkSecurityGroup: 'nsg'
   publicIpAddress: 'pip'
+  redisCache: 'redis'
   resourceGroup: 'rg'
   serviceBusNamespace: 'sbns'
   serviceBusQueue: 'sbq'
@@ -102,6 +111,10 @@ func getPrefixMap() object => {
   webApp: 'app' 
   
   // Custom prefixes not specified on the Microsoft site
+  appRegistration: 'appreg'
+  azdEnvironment: 'azd'
+  client: 'client'
+  webApplicationFirewallPolicy: 'waf' 
   webtest: 'webtest'
 }
 
@@ -113,7 +126,7 @@ func getPrefixMap() object => {
 func abbreviateEnvironment(environment string) string => getEnvironmentMap()[toLower(environment)]
 
 // By using a map for the environments, we can keep the names short but also only allow a specific set of values.
-func getEnvironmentMap() object => {
+func getEnvironmentMap() { *: string } => {
   dev: 'dev'
   development: 'dev'
   tst: 'tst'
@@ -132,7 +145,7 @@ func getEnvironmentMap() object => {
 func abbreviateRegion(region string) string => getRegionMap()[region]
 
 // Map Azure region name to Short Name (CAF) abbrevation taken from: https://www.jlaundry.nz/2022/azure_region_abbreviations/
-func getRegionMap() object => {
+func getRegionMap() { *: string } => {
   australiacentral: 'acl'
   australiacentral2: 'acl2'
   australiaeast: 'ae'
