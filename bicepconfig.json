@@ -39,13 +39,22 @@
         "no-deployments-resources": {
           "level": "error"
         },
+        "no-explicit-any": {
+          "level": "error"
+        },
         "no-hardcoded-env-urls": {
           "level": "error"
         },
         "no-hardcoded-location": {
           "level": "error"
         },
+        "no-hardcoded-outputs": {
+          "level": "error"
+        },
         "no-loc-expr-outside-params": {
+          "level": "error"
+        },
+        "no-module-name": {
           "level": "error"
         },
         "no-unnecessary-dependson": {
@@ -81,6 +90,9 @@
         "secure-params-in-nested-deploy": {
           "level": "error"
         },
+        "secure-params-in-parameters-file": {
+          "level": "error"
+        },
         "secure-secrets-in-params": {
           "level": "error"
         },
@@ -95,10 +107,14 @@
         },
         "use-recent-api-versions": {
           "level": "warning",
-          "maxAllowedAgeInDays": 730
+          "maxAgeInDays": 730,
+          "gracePeriodInDays": 90
         },
         "use-recent-module-versions": {
           "level": "warning"
+        },
+        "use-recognized-resource-type": {
+          "level": "error"
         },
         "use-resource-id-functions": {
           "level": "error"
@@ -116,6 +132,9 @@
           "level": "error"
         },
         "use-stable-vm-image": {
+          "level": "error"
+        },
+        "use-user-defined-types": {
           "level": "error"
         },
         "what-if-short-circuiting": {
