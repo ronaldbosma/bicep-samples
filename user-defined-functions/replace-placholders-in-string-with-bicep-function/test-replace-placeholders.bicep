@@ -2,7 +2,7 @@ import { replacePlaceholders } from './replace-placeholders.bicep'
 
 // Arrange
 param input string
-param placeholders object
+param placeholders { *: string }
 
 param expectedResult string
 
