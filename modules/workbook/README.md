@@ -40,7 +40,27 @@ The `sample.workbook` file should contain the workbook JSON. It can include plac
 
 ## Module format
 
-The module is defined in [workbook.bicep](./workbook.bicep) and deploys a shared workbook using the `Microsoft.Insights/workbooks@2023-06-01` resource type.
+To deploy a workbook using the [workbook module](./workbook.bicep), add the following Bicep to your template.
+
+```bicep
+module workbook 'workbook.bicep' = {
+  params: {
+    environmentName: 'string'
+    location: 'string'
+    tags: {
+      {customized property}: 'string'
+    }
+    displayName: 'string'
+    serializedData: 'string'
+    placeholders: {
+      {customized property}: 'string'
+    }
+    sourceId: 'string'
+    category: 'string'
+    version: 'string'
+  }
+}
+```
 
 ## Parameter Values
 
