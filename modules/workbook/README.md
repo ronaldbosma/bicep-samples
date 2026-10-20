@@ -10,16 +10,16 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' existing = {
   name: 'appi-aisquick-sdc-taqld'
 }
 
-resource apiManagementService 'Microsoft.ApiManagement/service@2025-03-01-preview' existing = {
+resource apiManagementService 'Microsoft.ApiManagement/service@2025-09-01-preview' existing = {
   name: 'apim-aisquick-sdc-taqld'
 }
 
 module workbook 'workbook.bicep' = {
   params: {
+    environmentName: 'dev'
     location: location
     displayName: 'Sample Workbook'
-    environment: 'test'
-    serializedData: loadTextContent('./sample.workbook')
+    serializedData: string(loadJsonContent('./sample.workbook'))
     placeholders: {
       AzureSubscriptionId: subscription().subscriptionId
       ApplicationInsightsId: appInsights.id
