@@ -75,3 +75,8 @@ module workbook 'workbook.bicep' = {
 | `sourceId` | Resource ID of the source resource, such as an Application Insights instance or Log Analytics workspace. | `string (default: 'azure monitor')` |
 | `category` | Workbook category. | `string (default: 'workbook')` |
 | `version` | Workbook schema version, which should match the workbook content. | `string (default: 'Notebook/1.0')` |
+
+## Links
+
+- [Microsoft.Insights/workbooks Bicep resource](https://learn.microsoft.com/en-us/azure/templates/microsoft.insights/workbooks?pivots=deployment-language-bicep)
+- [Replace placeholders in string with user-defined Bicep function](https://ronaldbosma.github.io/blog/2024/06/21/replace-placeholders-in-string-with-user-defined-bicep-function/)
