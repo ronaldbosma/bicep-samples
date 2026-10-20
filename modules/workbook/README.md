@@ -5,11 +5,11 @@ Deploys an Azure Monitor workbook with configurable metadata and JSON content. O
 ## Usage Examples
 
 ```bicep
-@description('The geo-location where the resource lives.')
+param environmentName = 'dev'
 param location string = resourceGroup().location
 
 param tags { *: string } = {
-  environment: dev
+  environment: environmentName
 }
 
 resource appInsights 'Microsoft.Insights/components@2020-02-02' existing = {
@@ -22,7 +22,7 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2025-09-01-previe
 
 module workbook 'workbook.bicep' = {
   params: {
-    environmentName: 'dev'
+    environmentName: environmentName
     location: location
     tags: tags
     displayName: 'Sample Workbook'
