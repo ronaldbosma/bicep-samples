@@ -13,7 +13,7 @@ param environmentName string
 param location string
 
 @description('The tags to associate with the resource')
-param tags resourceInput<'Microsoft.Insights/workbooks@2023-06-01'>.tags
+param tags resourceInput<'Microsoft.Insights/workbooks@2023-06-01'>.tags?
 
 @description('The user-defined name (display name) of the workbook. If an environment is specified, it will be appended to the display name to create a unique display name for the workbook.')
 param displayName string
