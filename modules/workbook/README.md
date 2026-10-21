@@ -5,7 +5,7 @@ Deploys an Azure Monitor workbook with configurable metadata and JSON content. O
 ## Usage Examples
 
 ```bicep
-param environmentName = 'dev'
+param environmentName string = 'dev'
 param location string = resourceGroup().location
 
 param tags { *: string } = {
@@ -32,6 +32,7 @@ module workbook 'workbook.bicep' = {
       ApplicationInsightsId: appInsights.id
       ApiManagementId: apiManagementService.id
     }
+    sourceId: appInsights.id
   }
 }
 ```
