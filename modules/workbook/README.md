@@ -41,7 +41,32 @@ module workbook 'workbook.bicep' = {
 }
 ```
 
-The `sample.workbook` file should contain the workbook JSON. It can include placeholders such as `##AzureSubscriptionId##`, which are replaced with the corresponding values in `placeholders`.
+Because the environment name is `dev`, the workbook shows up as `Sample Workbook (dev)`.
+
+### Sample workbook with placeholder
+
+The `sample.workbook` file is the workbook JSON that you can export from the Advanced Editor in the Azure portal. In that file, replace the hard-coded values with placeholders. A simplified example looks like this:
+
+```json
+{
+  "version": "Notebook/1.0",
+  "items": [
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "requests | summarize count() by name",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "crossComponentResources": [ "##ApplicationInsightsId##" ]
+      },
+      "name": "RequestsPerOperation"
+    }
+  ]
+}
+```
+
+When the module is deployed, `##ApplicationInsightsId##` is replaced with the resource ID of the Application Insights instance. The same goes for `##AzureSubscriptionId##` and `##ApiManagementId##`.
 
 ## Module format
 
