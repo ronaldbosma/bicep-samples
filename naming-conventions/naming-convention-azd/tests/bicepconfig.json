@@ -1,4 +1,5 @@
 {
+  "extends": "../../../bicepconfig.json",
   "experimentalFeaturesEnabled": {
     "testFramework": true,
     "assertions": true

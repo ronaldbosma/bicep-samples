@@ -1,6 +1,7 @@
 {
-    "experimentalFeaturesEnabled": {
-        "testFramework": true,
-        "assertions": true
+  "extends": "../../bicepconfig.json",
+  "experimentalFeaturesEnabled": {
+    "testFramework": true,
+    "assertions": true
   }
 }
