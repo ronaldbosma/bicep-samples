@@ -74,7 +74,7 @@ module workbook 'workbook.bicep' = {
 | `environmentName` | Name of the environment to deploy to. Appended to the workbook display name when not empty. | `string (required)` |
 | `location` | Location to use for the resource. | `string (required)` |
 | `tags` | Tags to associate with the workbook. | `resourceInput<'Microsoft.Insights/workbooks@2023-06-01'>.tags` |
-| `displayName` | User-defined workbook display name. | `string (required)` |
+| `displayName` | User-defined workbook display name. Appended by environment name if specified. <br/><br/> If the display name is 'Sample Workbook' and the environment name 'dev', the display name of the workbook will be 'Sample Workbook (dev)' | `string (required)` |
 | `serializedData` | Workbook configuration as a string containing valid JSON. Placeholders should follow the format `##<name>##`. | `string (required)` |
 | `placeholders` | Map of placeholder names to replacement values for `serializedData`. | `{ *: string }?` |
 | `sourceId` | Resource ID of the source resource, such as an Application Insights instance or Log Analytics workspace. | `string (default: 'azure monitor')` |
