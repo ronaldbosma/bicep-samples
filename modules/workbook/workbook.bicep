@@ -6,8 +6,8 @@
 // Parameters
 //=============================================================================
 
-@description('The name of the environment to deploy to')
-param environmentName string
+@description('The name of the environment to deploy to. Default: \'\'')
+param environmentName string = ''
 
 @description('Location to use for all resources')
 param location string

@@ -71,7 +71,7 @@ module workbook 'workbook.bicep' = {
 
 | Name | Description | Value |
 |---|---|---|
-| `environmentName` | Name of the environment to deploy to. Appended to the workbook display name when not empty. | `string (required)` |
+| `environmentName` | Name of the environment to deploy to. Appended to the workbook display name when not empty. | `string (default: '')` |
 | `location` | Location to use for the resource. | `string (required)` |
 | `tags` | Tags to associate with the workbook. | `resourceInput<'Microsoft.Insights/workbooks@2023-06-01'>.tags` |
 | `displayName` | User-defined workbook display name. Appended by environment name if specified. <br/><br/> If the display name is 'Sample Workbook' and the environment name 'dev', the display name of the workbook will be 'Sample Workbook (dev)' | `string (required)` |
