@@ -1,6 +1,10 @@
 # Azure Workbook module
 
-Deploys an Azure Monitor workbook with configurable metadata and JSON content. Optional placeholders in the workbook content are replaced with supplied values before deployment.
+Deploys an Azure Monitor workbook with configurable metadata and JSON content. Optional placeholders in the workbook content are replaced with supplied values before deployment. If any placeholders remain unresolved after replacement, deployment fails with an error similar to:
+
+```text
+Workbook "Sample Workbook (dev)" still contains unresolved placeholders.
+```
 
 ## Usage Examples
 
