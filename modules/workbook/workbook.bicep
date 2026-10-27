@@ -34,14 +34,6 @@ param category string = 'workbook'
 param version string = 'Notebook/1.0'
 
 //=============================================================================
-// Variables
-//=============================================================================
-
-var workbookName = guid(resourceGroup().id, displayName, environmentName)
-var workbookDisplayName = environmentName == '' ? displayName : '${displayName} (${environmentName})'
-var workbookContent = placeholders == null ? serializedData : replacePlaceholders(serializedData, items(placeholders!))
-
-//=============================================================================
 // Functions
 //=============================================================================
 
@@ -55,6 +47,14 @@ func replacePlaceholders(originalString string, placeholders array) string =>
 
 func replacePlaceholder(originalString string, placeholder string, value string) string =>
   replace(originalString, '##${placeholder}##', value)
+
+//=============================================================================
+// Variables
+//=============================================================================
+
+var workbookName = guid(resourceGroup().id, displayName, environmentName)
+var workbookDisplayName = environmentName == '' ? displayName : '${displayName} (${environmentName})'
+var workbookContent = placeholders == null ? serializedData : replacePlaceholders(serializedData, items(placeholders!))
 
 //=============================================================================
 // Resources
