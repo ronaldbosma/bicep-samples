@@ -108,5 +108,5 @@ module workbook 'workbook.bicep' = {
 
 ## Links
 
-- [Microsoft.Insights/workbooks Bicep resource](https://learn.microsoft.com/en-us/azure/templates/microsoft.insights/workbooks?pivots=deployment-language-bicep)
 - [Deploy Azure Workbooks with a Reusable Bicep Module](https://ronaldbosma.github.io/blog/2026/10/27/deploy-azure-workbooks-with-a-reusable-bicep-module/)
+- [Microsoft.Insights/workbooks Bicep resource](https://learn.microsoft.com/en-us/azure/templates/microsoft.insights/workbooks?pivots=deployment-language-bicep)
