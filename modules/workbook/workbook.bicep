@@ -37,6 +37,7 @@ param version string = 'Notebook/1.0'
 // Variables
 //=============================================================================
 
+var workbookName = guid(resourceGroup().id, displayName, environmentName)
 var workbookDisplayName = environmentName == '' ? displayName : '${displayName} (${environmentName})'
 var workbookContent = placeholders == null ? serializedData : replacePlaceholders(serializedData, items(placeholders!))
 
@@ -60,7 +61,7 @@ func replacePlaceholder(originalString string, placeholder string, value string)
 //=============================================================================
 
 resource workbook 'Microsoft.Insights/workbooks@2023-06-01' = {
-  name: guid(resourceGroup().id, displayName, environmentName)
+  name: workbookName
   location: location
   tags: tags
   kind: 'shared' // Only valid value for kind is 'shared'
